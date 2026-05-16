@@ -3,12 +3,32 @@
 <head>
 <meta charset="utf-8">
 <title>Music</title>
+<style>
+    /* 배경을 완전히 투명하게 만들고, 불필요한 여백과 높이를 제거합니다 */
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: transparent !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* 크롬, 엣지 등에서 다운로드 버튼(점 3개)을 숨기는 핵심 스타일 */
+    audio::-webkit-media-controls-download-button {
+        display: none !important;
+    }
+    audio::-webkit-media-controls-enclosure {
+        overflow: hidden !important;
+    }
+</style>
 </head>
 
-<body style="margin:0;background:#111;display:flex;justify-content:center;align-items:center;height:100vh;">
+<body>
 
-<audio controls>
-  <source src="./5925 타니응원가.mp3" type="audio/mpeg">
+<!-- 다운로드 속성을 차단한 오디오 플레이어 -->
+<audio controls controlsList="nodownload" oncontextmenu="return false;">
+    <source src="./5925 타니응원가.mp3" type="audio/mpeg">
 </audio>
 
 </body>
